@@ -139,9 +139,6 @@ MonoBehaviour:
   yPush: 15
   xPush: 2
   hitSonds:
-  - {fileID: 8300000, guid: 99dcc8f47389ab44aa62e2257f383bc4, type: 3}
-  - {fileID: 8300000, guid: ffe15a87262fecf409005ebf6dd0e2df, type: 3}
-  - {fileID: 8300000, guid: d326687aa0430b140b5b5830be0ec6e5, type: 3}
   - {fileID: 8300000, guid: 20b078f9b7522e5468cc3d9eefe576a1, type: 3}
   - {fileID: 8300000, guid: faf93da64abfa1d4daefbaa94ec8bec5, type: 3}
 --- !u!82 &4804875045019838068
