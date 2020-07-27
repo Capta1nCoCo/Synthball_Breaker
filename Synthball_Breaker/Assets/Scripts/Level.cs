@@ -24,14 +24,14 @@ public class Level : MonoBehaviour
         breakableBlocks++;
     }
 
-    public void RemoveDestroyedBlocks()
+    public void BlockDestroyed()
     {
         breakableBlocks--;
     }
 
     private void LevelComplete()
     {
-        if (breakableBlocks == 0)
+        if (breakableBlocks <= 0)
         {
             sceneLoader.LoadNextScene();
         }
