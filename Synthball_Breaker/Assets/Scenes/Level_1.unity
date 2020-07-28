@@ -1260,7 +1260,7 @@ PrefabInstance:
       objectReference: {fileID: 1800995564}
     - target: {fileID: 8722028228176453699, guid: 700c67317d5c7044ea1457c206e66af6, type: 3}
       propertyPath: m_Name
-      value: Game Status
+      value: Game Session
       objectReference: {fileID: 0}
     - target: {fileID: 8722028228176453701, guid: 700c67317d5c7044ea1457c206e66af6, type: 3}
       propertyPath: m_LocalPosition.x

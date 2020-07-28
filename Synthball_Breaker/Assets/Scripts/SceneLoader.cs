@@ -7,14 +7,17 @@ public class SceneLoader : MonoBehaviour
 {
     int currentSceneIndex;
 
+    GameSession gameStatus;
+
     // Start is called before the first frame update
     void Start()
-    {
-        currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+    {        
+        gameStatus = FindObjectOfType<GameSession>();
     }
 
     public void LoadFirstScene()
     {
+        gameStatus.ResetGame();
         SceneManager.LoadScene(0);
     }
 
@@ -25,6 +28,7 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadNextScene()
     {
+        currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex + 1);
     }
 
