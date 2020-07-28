@@ -7,14 +7,12 @@ public class Block : MonoBehaviour
 {
     [SerializeField] AudioClip breakSound;
     [SerializeField] ParticleSystem blockDestroyedVFX;
-    [SerializeField] int maxHits;
     [SerializeField] GameObject[] hitSprites;
     
     Level level;
     GameSession gameStatus;
 
     int timesHit;
-    int damageIndex = 0;
 
     private void Start()
     {
@@ -43,6 +41,7 @@ public class Block : MonoBehaviour
     private void HandleHit()
     {
         timesHit++;
+        int maxHits = hitSprites.Length + 1;
         if (timesHit >= maxHits)
         {
             DestroyBlock();
@@ -54,9 +53,16 @@ public class Block : MonoBehaviour
     }
 
     private void ShowNextHitSprite()
-    {       
-        hitSprites[damageIndex].SetActive(true);
-        damageIndex++;
+    {
+        int spriteIndex = timesHit - 1;
+        if (hitSprites[spriteIndex] != null)
+        {
+            hitSprites[spriteIndex].SetActive(true);            
+        }
+        else
+        {
+            Debug.LogError("Block sprite is missing from array: " + gameObject.name);
+        }
     }
 
     private void DestroyBlock()
