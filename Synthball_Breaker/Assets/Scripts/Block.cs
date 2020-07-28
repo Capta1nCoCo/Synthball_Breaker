@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,11 +8,13 @@ public class Block : MonoBehaviour
     [SerializeField] AudioClip breakSound;
     [SerializeField] ParticleSystem blockDestroyedVFX;
     [SerializeField] int maxHits;
-
+    [SerializeField] GameObject[] hitSprites;
+    
     Level level;
     GameSession gameStatus;
 
-    [SerializeField] int timesHit; // ser for debug
+    int timesHit;
+    int damageIndex = 0;
 
     private void Start()
     {
@@ -44,6 +47,16 @@ public class Block : MonoBehaviour
         {
             DestroyBlock();
         }
+        else
+        {
+            ShowNextHitSprite();
+        }
+    }
+
+    private void ShowNextHitSprite()
+    {       
+        hitSprites[damageIndex].SetActive(true);
+        damageIndex++;
     }
 
     private void DestroyBlock()

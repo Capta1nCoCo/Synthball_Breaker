@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2280462980062432134}
   - component: {fileID: 2280462980062432139}
   m_Layer: 0
-  m_Name: Breakable_Block
+  m_Name: Breakable_Block_(2-Hit)
   m_TagString: Breakable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: fca3cd1430f1d144a892469ef3561951, type: 3}
-  m_Color: {r: 0.94117653, g: 0.94117653, b: 0.94117653, a: 1}
+  m_Color: {r: 0.87843144, g: 0.050980397, b: 0.37647063, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -126,9 +126,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   breakSound: {fileID: 8300000, guid: 5098a13c65763144fb1b0a3d14fcaf80, type: 3}
   blockDestroyedVFX: {fileID: 8729206113557460813, guid: 4612ff3e1fa9f3d4fa1ba6904f99d503, type: 3}
-  maxHits: 1
+  maxHits: 2
   hitSprites:
-  - {fileID: 7787781604302801810}
   - {fileID: 7859325271751380955}
 --- !u!1 &7787781604302801810
 GameObject:
@@ -156,7 +155,7 @@ Transform:
   m_GameObject: {fileID: 7787781604302801810}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 2280462980062432132}
   m_RootOrder: 0
@@ -238,7 +237,7 @@ Transform:
   m_GameObject: {fileID: 7859325271751380955}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 2280462980062432132}
   m_RootOrder: 1
