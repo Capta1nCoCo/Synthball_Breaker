@@ -6,9 +6,12 @@ public class Block : MonoBehaviour
 {
     [SerializeField] AudioClip breakSound;
     [SerializeField] ParticleSystem blockDestroyedVFX;
+    [SerializeField] int maxHits;
 
     Level level;
     GameSession gameStatus;
+
+    [SerializeField] int timesHit; // ser for debug
 
     private void Start()
     {
@@ -28,6 +31,16 @@ public class Block : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (tag == "Breakable")
+        {
+            HandleHit();
+
+        }
+    }
+
+    private void HandleHit()
+    {
+        timesHit++;
+        if (timesHit >= maxHits)
         {
             DestroyBlock();
         }
