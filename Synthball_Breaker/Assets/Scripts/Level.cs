@@ -19,7 +19,7 @@ public class Level : MonoBehaviour
         LevelComplete();
     }
     
-    public void CountBreakableBlocks()
+    public void CountBlocks()
     {
         breakableBlocks++;
     }
