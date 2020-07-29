@@ -45,6 +45,17 @@ public class Paddle : MonoBehaviour
     private float GetXPos()
     {       
         return theBall.transform.position.x;        
-    }   
+    }
+    
+    public void ChangePaddleSize(float amount)
+    {
+        Vector3 paddleScale = new Vector3(transform.localScale.x + amount, transform.localScale.y);
+        transform.localScale = paddleScale;
+    }
+
+    public void ChangePaddleSpeed()
+    {
+        controlSpeed /= 2;
+    }
 
 }

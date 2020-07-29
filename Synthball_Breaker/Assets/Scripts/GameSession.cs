@@ -59,4 +59,10 @@ public class GameSession : MonoBehaviour
     {
         return isAutoPlayEnabled;
     }
+
+    public void ChangeGameSpeed(float amount)
+    {
+        gameSpeed += amount;
+    }
+
 }

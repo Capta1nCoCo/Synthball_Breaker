@@ -22,7 +22,7 @@ public class Ball : MonoBehaviour
     {        
         paddleToBallVector = transform.position - paddle1.transform.position;
         audioSource = GetComponent<AudioSource>();
-        myRigidBody2D = GetComponent<Rigidbody2D>();
+        myRigidBody2D = GetComponent<Rigidbody2D>();        
     }
 
     // Update is called once per frame
@@ -63,5 +63,9 @@ public class Ball : MonoBehaviour
             myRigidBody2D.velocity += velocityTweak;
         }        
     }
-
+    
+    public void ChangeRandomForce(float amount)
+    {
+        randomForce += amount;
+    }
 }
