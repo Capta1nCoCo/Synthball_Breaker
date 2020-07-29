@@ -6,13 +6,14 @@ using UnityEngine;
 public class PowerModifier : MonoBehaviour
 {
     [SerializeField] float yVelocity = -5f;
-    [SerializeField] float gameSpeedModifier = 1f;
-    [SerializeField] float randomForceModifier = 50f;
+    [SerializeField] float gameSpeedModifier = .2f;
+    [SerializeField] float randomForceModifier = 20f;
 
     Paddle thePaddle;
     Rigidbody2D myRigidBody2D;
     GameSession gameSession;
     Ball theBall;
+
     void Start()
     {
         thePaddle = FindObjectOfType<Paddle>();
@@ -27,38 +28,54 @@ public class PowerModifier : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Debug.Log("Triggered!");
-            //DecreasePaddleSize();
-            //DecreasePaddleSpeed();
-            //IncreaseGameSpeed();
+
             IncreaseRandomForce();
         }
 
     }
 
+    // Power-Downs:
     private void IncreaseRandomForce()
     {
         theBall.ChangeRandomForce(randomForceModifier);
         Destroy(gameObject);
     }
 
-    private void IncreaseGameSpeed()
+    private void PowerDownGameSpeed()
     {
-        gameSession.ChangeGameSpeed(gameSpeedModifier);
+        gameSession.IncreaseGameSpeed(gameSpeedModifier);
         Destroy(gameObject);
     }
 
-    private void DecreasePaddleSpeed()
+    private void PowerDownPaddleSpeed()
     {
-        thePaddle.ChangePaddleSpeed();
+        thePaddle.DecreasePaddleSpeed();
         Destroy(gameObject);
     }
 
-    private void DecreasePaddleSize()
+    private void PowerDownPaddleSize()
     {
         thePaddle.ChangePaddleSize(-1f);
         Destroy(gameObject);
     }
 
+    // Power-Ups:
+    private void PowerUpPaddleSize()
+    {
+        thePaddle.ChangePaddleSize(2f);
+        Destroy(gameObject);
+    }
 
+    private void PowerUpPaddleSpeed()
+    {
+        thePaddle.IncreasePaddleSpeed();
+        Destroy(gameObject);
+    }
+
+    private void PowerUpGameSpeed()
+    {
+        gameSession.DecreaseGameSpeed(gameSpeedModifier);
+        Destroy(gameObject);
+    }
     
 }

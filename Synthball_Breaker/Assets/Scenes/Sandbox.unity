@@ -377,8 +377,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   yVelocity: -5
-  gameSpeedModifier: 1
-  randomForceModifier: 25
+  gameSpeedModifier: 0.2
+  randomForceModifier: 20
 --- !u!4 &212542848 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2280462980062432132, guid: 522292a08656dff46be4680a95299b36, type: 3}

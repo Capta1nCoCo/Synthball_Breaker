@@ -53,9 +53,13 @@ public class Paddle : MonoBehaviour
         transform.localScale = paddleScale;
     }
 
-    public void ChangePaddleSpeed()
+    public void DecreasePaddleSpeed()
     {
         controlSpeed /= 2;
     }
 
+    public void IncreasePaddleSpeed()
+    {
+        controlSpeed *= 2;
+    }
 }
