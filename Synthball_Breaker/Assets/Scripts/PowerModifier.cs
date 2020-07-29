@@ -8,6 +8,18 @@ public class PowerModifier : MonoBehaviour
     [SerializeField] float yVelocity = -5f;
     [SerializeField] float gameSpeedModifier = .2f;
     [SerializeField] float randomForceModifier = 20f;
+    [SerializeField] float sizeModifier = 1f;
+
+    [Header("Power-Down Type")]
+    [SerializeField] bool increaseGameSpeed;
+    [SerializeField] bool decreasePaddleSize;
+    [SerializeField] bool decreasePaddleSpeed;
+    [SerializeField] bool increaseRandomForce;
+
+    [Header("Power-Up Type")]
+    [SerializeField] bool decreaseGameSpeed;
+    [SerializeField] bool increasePaddleSize;
+    [SerializeField] bool increasePaddleSpeed;    
 
     Paddle thePaddle;
     Rigidbody2D myRigidBody2D;
@@ -28,10 +40,43 @@ public class PowerModifier : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Debug.Log("Triggered!");
-
-            IncreaseRandomForce();
+            DefineAndApply();
         }
 
+    }
+
+    private void DefineAndApply()
+    {
+        // Power-Downs
+        if (increaseGameSpeed)
+        {
+            PowerDownGameSpeed();
+        }
+        else if (decreasePaddleSize)
+        {
+            PowerDownPaddleSize();
+        }
+        else if (decreasePaddleSpeed)
+        {
+            PowerDownPaddleSpeed();
+        }
+        else if (increaseRandomForce)
+        {
+            IncreaseRandomForce();
+        }
+        // Power-Ups
+        if (decreaseGameSpeed)
+        {
+            PowerUpGameSpeed();
+        }
+        else if (increasePaddleSize)
+        {
+            PowerUpPaddleSize();
+        }
+        else if (increasePaddleSpeed)
+        {
+            PowerUpPaddleSpeed();
+        }
     }
 
     // Power-Downs:
@@ -55,14 +100,14 @@ public class PowerModifier : MonoBehaviour
 
     private void PowerDownPaddleSize()
     {
-        thePaddle.ChangePaddleSize(-1f);
+        thePaddle.ChangePaddleSize(-sizeModifier);
         Destroy(gameObject);
     }
 
     // Power-Ups:
     private void PowerUpPaddleSize()
     {
-        thePaddle.ChangePaddleSize(2f);
+        thePaddle.ChangePaddleSize(sizeModifier);
         Destroy(gameObject);
     }
 
