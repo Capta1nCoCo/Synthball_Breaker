@@ -128,6 +128,7 @@ MonoBehaviour:
   blockDestroyedVFX: {fileID: 8729206113557460813, guid: 9e7bc0ed7973139419f1889a1ce3cfe4, type: 3}
   hitSprites:
   - {fileID: 7859325271751380955}
+  pointsPerBlockDestroyed: 40
 --- !u!1 &7787781604302801810
 GameObject:
   m_ObjectHideFlags: 0

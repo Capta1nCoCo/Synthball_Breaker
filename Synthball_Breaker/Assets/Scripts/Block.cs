@@ -8,7 +8,8 @@ public class Block : MonoBehaviour
     [SerializeField] AudioClip breakSound;
     [SerializeField] ParticleSystem blockDestroyedVFX;
     [SerializeField] GameObject[] hitSprites;
-    
+    [SerializeField] int pointsPerBlockDestroyed = 20;
+
     Level level;
     GameSession gameStatus;
 
@@ -67,7 +68,7 @@ public class Block : MonoBehaviour
 
     private void DestroyBlock()
     {
-        gameStatus.AddToScore();
+        gameStatus.AddToScore(pointsPerBlockDestroyed);
         PlayBlockDestroyedSFX();
         Destroy(gameObject);
         level.BlockDestroyed();

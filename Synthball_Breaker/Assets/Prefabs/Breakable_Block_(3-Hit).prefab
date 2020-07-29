@@ -129,6 +129,7 @@ MonoBehaviour:
   hitSprites:
   - {fileID: 7787781604302801810}
   - {fileID: 7859325271751380955}
+  pointsPerBlockDestroyed: 60
 --- !u!1 &7787781604302801810
 GameObject:
   m_ObjectHideFlags: 0
